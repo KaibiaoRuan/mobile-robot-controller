@@ -13,17 +13,15 @@ def talker():
     ii = 0.0
     while not rospy.is_shutdown():
         path = Twist()
-        path.linear.x = 8
+        path.linear.x = 0.3
         path.linear.y = 0
         path.linear.z = 0
         path.angular.x = 0
         path.angular.y = 0
         path.angular.z = ii
         pub.publish(path)
-        i += 1
-        if(i>5):
-            ii = 18
-        if(i>17):
+        i += 0.1
+        if(i>1):
             ii = 0
             i =0
         rate.sleep()
